@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import BlogPageListingItem from "../../components/BlogPageListingItem.astro";
+import Header from "../../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags?.includes(tag as string),
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <h2>Posts matching "{tag}"</h2>
+    {
+      posts.map((post) => (
+        <BlogPageListingItem
+          title={post.data.title}
+          description={post.data.description}
+          tags={post.data.tags}
+          pubDate={post.data.pubDate}
+          pageSlug={post.slug}
+        />
+      ))
+    }
+  </body>
+</html>

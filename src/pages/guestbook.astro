@@ -1,0 +1,47 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import GithubLoginButton from "../components/GithubLoginButton.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <h2>Sign my guestbook</h2>
+        <div class="flex">
+          <GithubLoginButton />
+        </div>
+        <form method="POST" class="mt-8 relative max-w-[500px] gap-2">
+          <span class="sr-only"> Comment </span>
+          <div class="flex space-x-4">
+            <input
+              type="text"
+              name="comment"
+              placeholder="Say something!"
+              aria-label="your comment"
+              id="comment"
+              required
+              aria-required="true"
+              class="bg-neutral-800 p-2 focus:ring-1 focus:outline-none focus:ring-lime-400 focus-visible:ring-lime-400 ring-1 ring-zinc-700 rounded-sm w-full"
+            />
+            <button
+              type="submit"
+              class="bg-neutral-800 rounded-sm px-4 py-2 hover:bg-accent-primary hover:text-neutral-900 transition-colors duration-200"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import TagLinks from "./TagLinks.astro";
+
+const { date, title, slug, tags, description } = Astro.props;
+---
+
+<li class="py-10">
+  <div class="flex flex-col md:grid md:grid-cols-4">
+    <div class="col-start-1">
+      <h3 class="">
+        <FormattedDate date={date} />
+      </h3>
+    </div>
+    <div class="md:col-start-2 md:col-span-3">
+      <h2>
+        <a href={slug}>{title}</a>
+      </h2>
+      <TagLinks tags={tags} />
+      <p class="mt-4">{description}</p>
+    </div>
+  </div>
+</li>

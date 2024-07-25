@@ -51,7 +51,7 @@ Doing that with this form, we see that it's taking our input, doing some sort of
 
 We can fire up `Burp` and intercept the request to see what's going on and try some payloads from [HackTricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#erb-ruby).
 
-The way the form works is you only need to enter a single name, grade and weight in one row. The rest of the numeric fields can be 0 and the string fields can be anything. <mark>The form will only calculate the first row of data</mark>. The ERB payload we land on is:
+The way the form works is you only need to enter a single name, grade and weight in one row. The rest of the numeric fields can be 0 and the string fields can be anything. <u>The form will only calculate the first row of data</u>. The ERB payload we land on is:
 
 ```erb
 <%= File.open('/etc/passwd').read %>

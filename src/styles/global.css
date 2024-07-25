@@ -20,9 +20,12 @@
     @apply antialiased bg-neutral-900 text-neutral-200 container flex px-4 md:px-0 min-h-screen flex-col md:max-w-5xl text-base;
   }
 
-  a:not(.no-hover),
-  a.dropdown {
+  header a {
     @apply hover:text-accent-primary;
+  }
+
+  section:has(a) a {
+    @apply text-accent-primary hover:text-accent-secondary no-underline;
   }
 
   a.active {
@@ -34,15 +37,19 @@
   }
 
   h2 {
-    @apply text-2xl font-bold;
+    @apply text-3xl font-bold;
+  }
+
+  h2 > a {
+    @apply hover:text-neutral-300 no-underline;
   }
 
   h3 {
-    @apply text-lg font-bold;
+    @apply text-xl font-bold;
   }
 
   h4 {
-    @apply text-base font-bold;
+    @apply text-lg font-bold;
   }
 
   section.prose a {

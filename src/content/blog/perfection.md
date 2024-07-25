@@ -4,7 +4,7 @@ description: "An easy rated Linux box that involves exploiting a Server-Side Tem
 tags: ["xss", "ssti", "ruby", "burp", "rce", "htb", "writeup"]
 pubDate: 2024-06-10
 slug: "perfection"
-heroImage: "Perfection.png"
+cover: "../../assets/images/Perfection.png"
 os: "linux"
 htbMachineActive: false
 ---

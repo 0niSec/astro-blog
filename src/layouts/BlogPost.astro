@@ -41,7 +41,7 @@ if (!post) {
             </h2>
             <h1 class="text-5xl not-prose">{post.data.title}</h1>
             <img
-              src=`/src/assets/images/${post.data.heroImage}`
+              src={post.data.cover.src}
               alt={post.data.title}
               width="700"
               class="mt-8"

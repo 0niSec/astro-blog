@@ -2,11 +2,11 @@
 import FormattedDate from "./FormattedDate.astro";
 import TagLinks from "./TagLinks.astro";
 
-const { title, description, tags, pubDate, pageSlug, heroImage } = Astro.props;
+const { title, description, tags, pubDate, pageSlug, cover } = Astro.props;
 ---
 
 <div class="col-span-1">
-  <img src=`/src/assets/images/${heroImage}` alt={title} class="w-full" />
+  <img src={cover} alt={title} class="w-full" />
   <li class="mt-10 list-none">
     <h4 class="text-neutral-400">
       <FormattedDate date={pubDate} />

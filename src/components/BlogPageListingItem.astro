@@ -1,9 +1,6 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import TagLinks from "./TagLinks.astro";
-
-type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, tags, pubDate, pageSlug, heroImage } = Astro.props;
 ---

@@ -10,7 +10,7 @@ import { getPostBySlug, getPreviousPost } from "../lib/utils";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, heroImage } = Astro.props;
+const { title, description, pubDate } = Astro.props;
 const { slug } = Astro.params;
 
 const post = getPostBySlug(slug as string);

@@ -7,6 +7,7 @@ import Footer from "@components/Footer.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import Header from "@components/Header.astro";
 import { getPostBySlug, getPreviousPost } from "../lib/utils";
+import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -40,8 +41,8 @@ if (!post) {
               <FormattedDate date={pubDate} />
             </h2>
             <h1 class="text-5xl not-prose">{post.data.title}</h1>
-            <img
-              src={post.data.cover.src}
+            <Image
+              src={post.data.cover}
               alt={post.data.title}
               width="700"
               class="mt-8"

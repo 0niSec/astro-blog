@@ -4,6 +4,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import BlogPageListingItem from "../../components/BlogPageListingItem.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import HomePageListingItem from "@components/HomePageListingItem.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
@@ -37,11 +38,11 @@ const { posts } = Astro.props;
     <h2>Posts matching "{tag}"</h2>
     {
       posts.map((post) => (
-        <BlogPageListingItem
+        <HomePageListingItem
           title={post.data.title}
           description={post.data.description}
           tags={post.data.tags}
-          pubDate={post.data.pubDate}
+          date={post.data.pubDate}
           pageSlug={post.slug}
         />
       ))

@@ -3,7 +3,7 @@ title: "Boardlight"
 description: "An easy rated Linux box that emphasizes and develops enumeration skills, both externally and internally. Foothold is obtained through an authenticated RCE that exploits improper input sanitization. Further enumeration reveals a plaintext password that is reused by another user, allowing escalation of privileges. Finally, root access is obtained through a zero-day exploit found in the Enlightenment Window Manager."
 tags: ["writeup", "htb", "enumeration", "dolibarr", "cve", "rce"]
 slug: "boardlight"
-cover: "../../assets/images/Boardlight.png"
+cover: "../../assets/images/BoardLight.png"
 pubDate: 2024-07-18
 os: "linux"
 htbMachineActive: true

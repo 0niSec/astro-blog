@@ -2,7 +2,7 @@
 title: "Perfection"
 description: "An easy rated Linux box that involves exploiting a Server-Side Template Injection (SSTI) vulnerability to get a reverse shell and then cracking a hash to get root."
 tags: ["xss", "ssti", "ruby", "burp", "rce", "htb", "writeup"]
-pubDate: 2024-06-10
+pubDate: 2024-07-26
 slug: "perfection"
 cover: "../../assets/images/Perfection.png"
 os: "linux"

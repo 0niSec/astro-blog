@@ -20,7 +20,7 @@ const posts = (await getCollection("blog")).sort(
     <Header />
     <h1>All Posts</h1>
     <ul>
-      <div id="post-listing" class="mt-10 grid grid-cols-3 gap-x-8">
+      <div id="post-listing" class="mt-10 grid grid-cols-3 gap-x-8 gap-y-8">
         {
           posts.map((post) => (
             <BlogPageListingItem

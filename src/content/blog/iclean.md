@@ -2,11 +2,11 @@
 title: "iClean"
 description: "A medium rated Linux box that involves exploiting a Server-Side Template Injection (SSTI) vulnerability to get a reverse shell as a low level user. Further privilege escalation requires finding a weak password in a database table, which leads the attacker to another user. Root user is obtained by exploiting a vulnerability in qpdf."
 tags: ["xss", "ssti", "weakpasswords", "sessionjacking", "htb", "writeup"]
-pubDate: 2024-07-30
+pubDate: 2024-08-03
 slug: "iclean"
 cover: "../../assets/images/IClean.png"
 os: "linux"
-htbMachineActive: false
+htbMachineActive: true
 ---
 
 ## Table of Contents

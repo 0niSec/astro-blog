@@ -211,6 +211,6 @@ sudo qpdf --empty /tmp/root.txt --qdf --add-attachment /root/root.txt --
 
 ![root](../../assets/images/iclean-strings-output-pdf.webp)
 
-## Conclusion
+## Conclusion & Lessons Learned
 
-This was a really fun medium machine that
+This was a really fun medium machine that really pushed SSTI exploitation because of the WAF that was present. I needed to really dig and research different ways to bypass WAF filters and eventually remembered PayloadsAllTheThings, which was extremely helpful.

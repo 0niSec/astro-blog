@@ -56,7 +56,7 @@ if (!post) {
           <div class="grid grid-cols-4 gap-x-4 mt-10">
             <div class="text-sm pb-8">
               <h5 class="font-bold uppercase tracking-wide">Tags</h5>
-              <div class="flex flex-wrap gap-x-4">
+              <div class="flex flex-wrap overflow-scroll gap-x-4">
                 {
                   post.data?.tags?.map((tag) => (
                     <a href={`/tags/${tag}`}>{tag}</a>
@@ -78,7 +78,6 @@ if (!post) {
                 <h2 class="not-prose">Introduction</h2>
                 <p>{description}</p>
               </div>
-              <div class="flex flex-col"></div>
             </div>
           </div>
         </section>

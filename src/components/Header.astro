@@ -5,17 +5,30 @@ import { GITHUB_URL, HTB_URL } from "../consts";
 ---
 
 <script>
-  import { createIcons } from "lucide";
+  import { createIcons, Menu } from "lucide";
   import { Search } from "lucide";
   createIcons({
     icons: {
       Search,
+      Menu,
     },
   });
 </script>
 
 <header class="py-4 md:py-10">
   <nav class="flex justify-between items-center font-semibold">
+    <input
+      type="checkbox"
+      name="mobile-menu-toggle"
+      id="mobile-menu-toggle"
+      class="hidden"
+    />
+    <label for="mobile-menu-toggle" class="cursor-pointer md:hidden">
+      <i
+        data-lucide="menu"
+        class="w-6 h-6 text-neutral-200 block cursor-pointer"
+        transition:persist></i>
+    </label>
     <div class="hidden md:flex items-center space-x-4">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -57,3 +70,51 @@ import { GITHUB_URL, HTB_URL } from "../consts";
     </div>
   </nav>
 </header>
+
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 w-[100vw] h-[100vh] z-50 bg-slate-900/90 font-semibold text-neutral-200 items-center justify-center flex-col hidden"
+>
+  <div class="flex flex-col space-y-2">
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/tags">Tags</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="/guestbook">Guestbook</HeaderLink>
+  </div>
+  <input
+    type="checkbox"
+    name="mobile-menu-toggle"
+    id="mobile-menu-toggle"
+    class="hidden"
+  />
+  <label for="mobile-menu-toggle" class="absolute top-4 right-4 cursor-pointer">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      ><path
+        fill="currentColor"
+        d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"
+      ></path></svg
+    >
+  </label>
+</div>
+
+<style>
+  header:has(#mobile-menu-toggle:checked) + #mobile-menu {
+    display: flex;
+  }
+</style>
+
+<script>
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  mobileMenuToggle?.addEventListener("change", function () {
+    if ((this as HTMLInputElement).checked) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  });
+</script>

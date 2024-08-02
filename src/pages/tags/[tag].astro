@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
-import BlogPageListingItem from "../../components/BlogPageListingItem.astro";
+import Footer from "@components/Footer.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import HomePageListingItem from "@components/HomePageListingItem.astro";
@@ -35,6 +35,7 @@ const { posts } = Astro.props;
   </head>
   <body>
     <Header />
+
     <h2>Posts matching "{tag}"</h2>
     {
       posts.map((post) => (
@@ -43,9 +44,10 @@ const { posts } = Astro.props;
           description={post.data.description}
           tags={post.data.tags}
           date={post.data.pubDate}
-          pageSlug={post.slug}
+          slug={post.slug}
         />
       ))
     }
+    <Footer />
   </body>
 </html>

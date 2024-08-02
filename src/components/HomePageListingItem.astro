@@ -5,7 +5,7 @@ import TagLinks from "./TagLinks.astro";
 const { date, title, slug, tags, description } = Astro.props;
 ---
 
-<li class="py-10 list-none">
+<li class="py-8 list-none">
   <div class="flex flex-col md:grid md:grid-cols-4">
     <div class="col-start-1">
       <h3>
@@ -14,7 +14,7 @@ const { date, title, slug, tags, description } = Astro.props;
     </div>
     <div class="md:col-start-2 md:col-span-3">
       <h2>
-        <a href={slug} class="cursor-pointer">{title}</a>
+        <a href=`/blog/${slug}` class="cursor-pointer">{title}</a>
       </h2>
       <TagLinks tags={tags} />
       <p class="mt-4 line-clamp-3 md:line-clamp-none">{description}</p>

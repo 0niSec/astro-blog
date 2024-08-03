@@ -1,42 +1,44 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import HomePageListingItem from '../components/HomePageListingItem.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import HomePageListingItem from "@components/HomePageListingItem.astro";
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-const recentPosts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 5);
+const recentPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1 class="mb-4 text-center">0niSec</h1>
-			<p class="text-center">Hack the Box writeups, thoughts and more</p>
-			<div class="flex flex-col mt-10 divide-y">
-				<h2 class="pb-10">Latest Posts</h2>
-				<ul class="divide-y divide-y-neutral-800">
-				  {recentPosts.map((post) => (
-					<HomePageListingItem
-					  title={post.data.title}
-					  slug=`/blog/${post.slug}`
-					  tags={post.data.tags}
-					  description={post.data.description as string}
-					  date={post.data.pubDate}
-					  key={post.slug}
-					/>
-				  ))}
-				</ul>
-			  </div>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1 class="mb-4 text-center">0niSec</h1>
+      <p class="text-center">Hack the Box writeups, thoughts and more</p>
+      <div class="flex flex-col mt-10 divide-y">
+        <h2 class="pb-10">Latest Posts</h2>
+        <ul class="divide-y divide-y-neutral-800">
+          {
+            recentPosts.map((post) => (
+              <HomePageListingItem
+                title={post.data.title}
+                slug={post.slug}
+                tags={post.data.tags}
+                description={post.data.description as string}
+                date={post.data.pubDate}
+                key={post.slug}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>

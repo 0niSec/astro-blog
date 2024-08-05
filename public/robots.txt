@@ -1,2 +1,4 @@
-User-Agent: *
+User-agent: *
 Allow: /
+
+Sitemap: https://0nisec.blog/sitemap-index.xml

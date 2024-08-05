@@ -6,7 +6,7 @@ import { fade } from "astro:transitions";
 import Footer from "@components/Footer.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import Header from "@components/Header.astro";
-import { getPostBySlug, getPreviousPost } from "../lib/utils";
+import { getNextPost, getPostBySlug, getPreviousPost } from "../lib/utils";
 import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"blog">["data"];
@@ -16,6 +16,7 @@ const { slug } = Astro.params;
 
 const post = getPostBySlug(slug as string);
 const previousPost = getPreviousPost(post?.slug as string);
+const nextPost = getNextPost(post?.slug as string);
 
 // If the post doesn't exist, throw a 404
 if (!post) {
@@ -64,13 +65,32 @@ if (!post) {
                 }
               </div>
               <div class="flex text-sm flex-col py-8">
-                <h5 class="font-bold uppercase tracking-wide">Next Article</h5>
-                <a
-                  href={`/blog/${previousPost.slug}`}
-                  class="not-prose text-accent-primary hover:text-accent-secondary"
-                >
-                  {previousPost.data.title}
-                </a>
+                {
+                  previousPost && (
+                      <h5 class="font-bold uppercase tracking-wide">
+                        Previous Article
+                      </h5>
+                      <a
+                        href={`/blog/${previousPost.slug}`}
+                        class="not-prose text-accent-primary hover:text-accent-secondary"
+                      >
+                        {previousPost.data.title}
+                      </a>
+                  )
+                }
+                {
+                  nextPost && (
+                      <h5 class="font-bold uppercase tracking-wide mt-4">
+                        Next Article
+                      </h5>
+                      <a
+                        href={`/blog/${nextPost.slug}`}
+                        class="not-prose text-accent-primary hover:text-accent-secondary"
+                      >
+                        {nextPost.data.title}
+                      </a>
+                  )
+                }
               </div>
             </div>
             <div class="col-span-3">

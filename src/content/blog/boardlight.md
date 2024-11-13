@@ -4,9 +4,9 @@ description: "An easy rated Linux box that emphasizes and develops enumeration s
 tags: ["writeup", "htb", "enumeration", "dolibarr", "cve", "rce"]
 slug: "boardlight"
 cover: "../../assets/images/BoardLight.png"
-pubDate: 2024-07-18
+pubDate: 2024-11-13
 os: "linux"
-htbMachineActive: true
+htbMachineActive: false
 ---
 
 ## Table of Contents

@@ -25,4 +25,4 @@ Because I work full time and have two kids, I may miss a day. I will absolutely 
 
 ## What Next?
 
-Look for the articles tagged with [30 days of cyber](../tags/30-days-of-cyber). Posts should also start with a "Day..." title and can be found using that.
+Look for the articles tagged with [30 days of cyber](/tags/30-days-of-cyber). Posts should also start with a "Day..." title and can be found using that.

@@ -30,7 +30,7 @@ if (!post) {
     <BaseHead
       title={title}
       description={description}
-      image={post.data.cover.src}
+      image={post.data.cover?.src ?? null}
     />
   </head>
 
@@ -46,13 +46,15 @@ if (!post) {
               <FormattedDate date={pubDate} />
             </h2>
             <h1 class="text-5xl not-prose">{post.data.title}</h1>
-            <Image
+            {post.data.cover && (
+              <Image
               src={post.data.cover}
               alt={post.data.title}
               width="700"
               height="700"
               class="mt-8"
-            />
+              />
+            )}
           </div>
           <div class="grid grid-cols-4 gap-x-4 mt-10">
             <div class="text-sm pb-8">

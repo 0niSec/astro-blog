@@ -7,7 +7,7 @@ const { title, description, tags, pubDate, pageSlug, cover } = Astro.props;
 ---
 
 <div class="col-span-1">
-  <Image src={cover} alt={title} class="w-full" />
+  {cover && <Image src={cover} alt={title} class="w-full" />}
   <li class="mt-10 list-none">
     <h4 class="text-neutral-400">
       <FormattedDate date={pubDate} />

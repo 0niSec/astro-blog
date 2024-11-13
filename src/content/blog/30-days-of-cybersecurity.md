@@ -2,7 +2,7 @@
 title: "30 Days of Cybersecurity Challenge"
 pubDate: 2024-11-13
 description: "This article discusses my 30 days of cybersecurity challenge where every day for 30 days I try to learn about or do one thing related to cybersecurity"
-tags: ["cybersecurity", "30-days-of-cyber", "challenge"]
+tags: ["30-days-of-cyber"]
 ---
 
 ## Why Am I Doing This?
@@ -18,6 +18,10 @@ The challenge is simple. As best as I can with the limited time I have every day
 3. HTB Academy articles (where I'd write up a blog post on what I learned, trying to not just be a summary)
 
 The programming projects can be anything from learning about writing malware, security tools, etc. This list doesn't encompass everything but I'm sure it covers a lot of things I could do.
+
+I also want to make sure that I'm not just doing things I'm comfortable with. I want to push myself to learn new things and get out of my comfort zone. Hopefully I'm able to do that.
+
+Because I work full time and have two kids, I may miss a day. I will absolutely try not to so that I can keep to the spirit of the challenge but give me some grace here.
 
 ## What Next?
 

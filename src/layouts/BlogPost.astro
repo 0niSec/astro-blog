@@ -61,7 +61,7 @@ if (!post) {
               <h5 class="font-bold uppercase tracking-wide">Tags</h5>
               <div class="flex flex-wrap overflow-scroll gap-x-4">
                 {
-                  post.data?.tags?.map((tag) => (
+                  post.data?.tags?.map((tag: string) => (
                     <a href={`/tags/${tag}`}>{tag}</a>
                   ))
                 }
@@ -98,7 +98,7 @@ if (!post) {
             <div class="col-span-3">
               <div id="box-info" class="">
                 <h2 class="not-prose">Introduction</h2>
-                <p>{description}</p>
+                <p class="mt-6">{description}</p>
               </div>
             </div>
           </div>

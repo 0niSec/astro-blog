@@ -7,7 +7,7 @@ slug: "permx"
 cover: "../../assets/images/PermX.png"
 pubDate: 2024-07-27
 os: "linux"
-htbMachineActive: true
+htbMachineActive: false
 ---
 
 ## Table of Contents

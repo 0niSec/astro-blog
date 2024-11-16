@@ -18,7 +18,10 @@
     "@fontsource-variable/fira-code": "^5.0.18",
     "astro": "^4.16.12",
     "astro-expressive-code": "^0.35.3",
+    "dayjs": "^1.11.13",
     "lucide": "^0.396.0",
+    "rehype-mermaid": "^3.0.0",
+    "remark-toc": "^9.0.0",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
   },

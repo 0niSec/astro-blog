@@ -56,6 +56,23 @@
     @apply text-accent-primary hover:text-accent-secondary no-underline !important;
   }
 
+  section.prose strong {
+    @apply text-slate-400;
+  }
+
+  figcaption,
+  figcaption + p > img {
+    @apply mt-0 mb-0 text-slate-400 !important;
+  }
+
+  figcaption + p:has(img) {
+    margin-bottom: 0 !important;
+  }
+
+  figcaption + p > img {
+    margin-bottom: 0 !important;
+  }
+
   code,
   kbd {
     @apply text-neutral-400 !important;
@@ -66,9 +83,9 @@
     content: "" !important;
   }
 
-  /* article:has(#table-of-contents) li {
-	  @apply mt-0 mb-0;
-	} */
+  /* #table-of-contents + ul {
+    @apply list-none;
+  } */
 
   ::selection {
     @apply bg-accent-secondary text-neutral-800;
